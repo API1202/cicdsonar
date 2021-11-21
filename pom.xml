@@ -30,6 +30,43 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
+						<workers>${workers}</workers>
+						<workerType>${cloudhub.worker}</workerType>
+						<region>us-east-2</region>
+						<environment>${cloudhub.environment}</environment>
+						<objectStoreV2>true</objectStoreV2>
+						<applicationName>sonarqube-api</applicationName>
+						<properties>
+							<mule.env>${mule.env}</mule.env>
+							<anypoint.platform.gatekeeper>${anypoint.platform.gatekeeper}</anypoint.platform.gatekeeper>
+							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
+						</properties>
+					</cloudHubDeployment>
+					<executions>
+						<execution>
+							<id>deploy</id>
+							<goals>
+								<goal>deploy</goal>
+							</goals>
+						</execution>
+					</executions>
+					<classifier>mule-application</classifier>
+					<sharedLibraries>
+						<!-- other shared libraries -->
+					</sharedLibraries>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
