@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="sonarqube-test-suite.xml" />
+	<munit:test name="sonarqube-test-suite-sonarqubeFlowTest" doc:id="882ace3e-f1c8-4292-af26-4b42a5eab394" description="Test">
+		<munit:behavior >
+			<munit:set-event doc:name="Set Event" doc:id="4c88106c-9f8b-4fd7-8c6b-3eb24414ad27" />
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to sonarqubeFlow" doc:id="9f8946fc-a1ef-4697-8003-2ddc8a635ed5" name="sonarqubeFlow"/>
+		</munit:execution>
+	</munit:test>
+
+
+</mule>
